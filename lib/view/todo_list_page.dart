@@ -18,12 +18,6 @@ class _ToDoListState extends State<ToDoList> {
     _textFieldController.clear();
   }
 
-  void _removeToDoItem(String task) {
-    setState(() {
-      _todoList.remove(task);
-    });
-  }
-
   Widget _buildToDoList() {
     return ListView.builder(
       itemCount: _todoList.length,
@@ -36,10 +30,6 @@ class _ToDoListState extends State<ToDoList> {
   Widget _buildToDoItem(String title) {
     return ListTile(
       title: Text(title),
-      trailing: IconButton(
-        icon: const Icon(Icons.delete),
-        onPressed: () => _removeToDoItem(title),
-      ),
     );
   }
 
